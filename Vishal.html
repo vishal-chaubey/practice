@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body>
+    <input type="text" value="" name="myData" id="myData">
+    <button type="submit" id="ram1" onclick="ram(this.myData)">Submit</button>
+    
+    <script>
+      var elem = document.getElementById('myData').value;
+      if(typeof elem !== 'undefined' && elem !== null) {
+       
+      }
+         console.log(elem); 
+            var bttn = document.querySelector('ram1');
+            var url1 = window.location.href;
+            var url = new URL(url1);
+            var getParams = function (url) {
+            var params = {};
+            var parser = document.createElement('a');
+            parser.href = url;
+            var query = parser.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                params[pair[0]] = decodeURIComponent(pair[1]);
+            }
+            return params;
+            };
+    
+        var t = getParams(url1);
+        const key = Object.keys(t);
+        console.log(key);
+        var ram = function(elem){
+        var aaaa = key.map(k => {
+            // console.log(k);
+        if(k == elem){
+            return k;
+         }
+        })
+        console.log(aaaa);
+        }
+        
+    
+    
+    
+    
+    
+    
+      
+             
+            var data = url.searchParams.get(elem);
+            // var number = url.searchParams.get("number");
+          
+              
+         
+           alert(`name = ${data}`);
+    
+    
+    
+    
+    
+        </script>
+</body>
+</html>
